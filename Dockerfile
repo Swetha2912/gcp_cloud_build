@@ -1,4 +1,4 @@
-FROM golang
+FROM golang AS builder
 WORKDIR /go/src/tericai/app
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix .
