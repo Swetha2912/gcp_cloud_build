@@ -1,7 +1,7 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   dir: 'credentials'
-  args: ['build', '-t', 'gcr.io/gcr-testing-258008/cloud-credential:1.0', '.']
+  args: ['build', '-t', 'gcr.io/gcr-testing-258008/cloud-credential:1.0', '-f','Dockerfile.prod']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/gcr-testing-258008/cloud-credential:1.0']
 - name: gcr.io/cloud-builders/docker
