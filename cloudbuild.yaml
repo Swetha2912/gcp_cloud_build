@@ -1,4 +1,4 @@
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ['ls', '-la']
+  args: ['run','ls', '-la']
   
