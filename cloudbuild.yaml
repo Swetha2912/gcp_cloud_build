@@ -1,6 +1,11 @@
 steps:
 - name: gcr.io/cloud-builders/docker
-  dir: 'mo'
+  dir: 'credentials'
+  args: ['build', '-t', 'gcr.io/gcr-testing-258008/cloud-credential:1.0', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/gcr-testing-258008/cloud-credential:1.0']
+- name: gcr.io/cloud-builders/docker
+  dir: 'models'
   args: ['build', '-t', 'gcr.io/gcr-testing-258008/cloud-model:1.0', '.']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/gcr-testing-258008/cloud-model:1.0']
