@@ -8,6 +8,8 @@ RUN go get github.com/joho/godotenv
 RUN go get github.com/satori/go.uuid
 RUN go get github.com/streadway/amqp
 RUN go get github.com/TonPC64/gomon
+RUN go get github.com/denisbrodbeck/machineid
+RUN go get github.com/glendc/go-external-ip
 RUN ls -la
 
 COPY common /go/src/tericai/common
