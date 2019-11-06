@@ -1,19 +1,4 @@
-FROM golang as builder
-
-WORKDIR /go/src/tericai/app
-
-RUN go get github.com/globalsign/mgo
-RUN go get github.com/globalsign/mgo/bson
-RUN go get github.com/joho/godotenv
-RUN go get github.com/satori/go.uuid
-RUN go get github.com/streadway/amqp
-RUN go get github.com/TonPC64/gomon
-RUN go get github.com/denisbrodbeck/machineid
-RUN go get github.com/glendc/go-external-ip
-RUN ls -la
-
-COPY common /go/src/tericai/common
-
+FROM gcr.io/gcr-testing-258008/go_common:latest as builder
 WORKDIR /go/src/tericai/app
 COPY . .
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix .
