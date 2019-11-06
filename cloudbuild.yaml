@@ -1,9 +1,9 @@
 steps:
 - name: gcr.io/cloud-builders/docker
   dir: 'credentials'
-  args: ['build', '-f','Dockerfile.prod','-t', 'gcr.io/gcr-testing-258008/cloud-credentials:1.0','.']
+  args: ['build', '-f','Dockerfile.prod','-t', 'gcr.io/gcr-testing-258008/cloud-credential:1.0','.']
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/gcr-testing-258008/cloud-credentials:1.0']
+  args: ['push', 'gcr.io/gcr-testing-258008/cloud-credential:1.0']
 - name: gcr.io/cloud-builders/docker
   dir: 'models'
   args: ['build', '-t', 'gcr.io/gcr-testing-258008/cloud-models:1.0', '.']
