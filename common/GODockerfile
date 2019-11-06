@@ -1,0 +1,21 @@
+FROM golang as builder
+
+RUN apt-get update && apt-get install libvips-tools -y
+WORKDIR /go/src/tericai/app
+
+RUN go get github.com/globalsign/mgo
+RUN go get github.com/globalsign/mgo/bson
+RUN go get github.com/joho/godotenv
+RUN go get github.com/satori/go.uuid
+RUN go get github.com/streadway/amqp
+RUN go get github.com/denisbrodbeck/machineid
+RUN go get github.com/glendc/go-external-ip
+
+RUN go get golang.org/x/crypto/bcrypt
+RUN go get github.com/dgrijalva/jwt-go
+
+RUN go get github.com/aws/aws-sdk-go/aws
+RUN go get github.com/gorilla/websocket
+RUN go get github.com/TonPC64/gomon
+
+COPY . /go/src/tericai/common
